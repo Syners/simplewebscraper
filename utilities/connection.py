@@ -13,12 +13,12 @@ import gzip
 import StringIO
 import zlib
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+
 requests.packages.urllib3.disable_warnings()
 
 
 class Connect(object):
-    def __init__(self, logger=logging.getLogger(__name__)):
+    def __init__(self, logger):
         self.proxy_flag = Defaults.proxy_flag
         self.jar = cookielib.CookieJar()
         self.requestSession = requests.Session()
