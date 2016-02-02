@@ -1,9 +1,6 @@
-import requests  # pip install requests[security]
 import ssl
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.poolmanager import PoolManager
-
-requests.packages.urllib3.disable_warnings()
 
 
 class SSLAdapter(HTTPAdapter):
