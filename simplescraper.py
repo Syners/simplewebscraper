@@ -1,0 +1,4 @@
+
+
+class Scraper(object):
+    pass
