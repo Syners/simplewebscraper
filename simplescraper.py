@@ -1,5 +1,5 @@
 from utilities.connection import Connect
-from httpmethods import Methods
+from enumerations import HTTPMethods
 import logging
 from utilities.proxy_aggregators import Hidester
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     # test.fetch()
 
     test = Scraper()
-    test.HTTP_mode = Methods.GET
+    test.HTTP_mode = HTTPMethods.GET
     test.use_per_proxy_count = 5
     # test.proxy_pool = {"https": ["https://212.119.246.138:8080"],
     #                    "http": []}

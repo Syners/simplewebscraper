@@ -1,4 +1,4 @@
-from httpmethods import Methods
+from enumerations import HTTPMethods
 
 
 class ProxyPool(type):
@@ -27,7 +27,7 @@ class Hidester(object):
     def get_proxy_json(self):
         from convert_response import ToJSON
         self.scraper.url = self.__url
-        self.scraper.HTTP_mode = Methods.GET
+        self.scraper.HTTP_mode = HTTPMethods.GET
         return ToJSON(self.scraper.fetch())
 
     def generate_pool(self):
