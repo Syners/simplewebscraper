@@ -2,6 +2,8 @@ from utilities.connection import Connect
 from enumerations import HTTPMethods
 import logging
 from utilities.proxy_aggregators import Hidester
+from utilities.cookies import Chrome
+
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -38,9 +40,10 @@ if __name__ == "__main__":
 
     test = Scraper()
     test.HTTP_mode = HTTPMethods.GET
-    test.use_per_proxy_count = 5
+    # test.use_per_proxy_count = 5
     # test.proxy_pool = {"https": ["https://212.119.246.138:8080"],
     #                    "http": []}
-    test.proxy_pool = Hidester
+    # test.proxy_pool = Hidester
+    test.cookies = Chrome
     test.url = "https://myip.dnsdynamic.org"
     print test.fetch()
