@@ -10,3 +10,4 @@ class Defaults(object):
     }
     download_path = os.getcwd()
     use_per_proxy_count = -1 #Infinite
+    connection_timeout_length = 5
