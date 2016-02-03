@@ -2,7 +2,7 @@ from utilities.connection import Connect
 from enumerations import HTTPMethods
 import logging
 from utilities.proxy_aggregators import Hidester
-from utilities.cookies import Chrome
+from utilities.cookies import Chrome, Firefox
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     # test.proxy_pool = {"https": ["https://212.119.246.138:8080"],
     #                    "http": []}
     # test.proxy_pool = Hidester
-    test.cookies = Chrome
+    test.cookies = Firefox #Chrome or Firefox
     test.url = "https://myip.dnsdynamic.org"
     print test.fetch()
