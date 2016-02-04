@@ -13,7 +13,7 @@ import StringIO
 import zlib
 import logging
 from proxy_aggregators import ProxyPool
-from cookies import CookieJar
+from ccookies import CookieJar
 requests.packages.urllib3.disable_warnings()
 
 

@@ -2,7 +2,7 @@ from utilities.connection import Connect
 from enumerations import HTTPMethods
 import logging
 from utilities.proxy_aggregators import Hidester
-from utilities.cookies import Chrome, Firefox
+from utilities.ccookies import Chrome, Firefox
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
