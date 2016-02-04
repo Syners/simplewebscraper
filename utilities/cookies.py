@@ -5,9 +5,7 @@ import sys
 import platform
 import shutil
 import sqlite3
-
 import time
-
 from enumerations import OperatingSystem
 import os
 
@@ -259,7 +257,3 @@ class Firefox(object):
                             "Go to http://sourceforge.net/projects/pywin32/files/pywin32/Build%20220/"
                             " and download it for your version of Python.")
         return win32crypt.CryptUnprotectData(value, None, None, None, 0)[1]
-
-
-if __name__ == "__main__":
-    Firefox()

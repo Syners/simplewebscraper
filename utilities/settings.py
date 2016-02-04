@@ -9,5 +9,5 @@ class Defaults(object):
         'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }
     download_path = os.getcwd()
-    use_per_proxy_count = -1 #Infinite
+    use_per_proxy_count = 1000
     connection_timeout_length = 5
