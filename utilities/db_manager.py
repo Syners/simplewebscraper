@@ -66,10 +66,11 @@ class ProxyDB(DatabaseManager):
         return dict(http=http_copied_list, https=https_copied_list)
 
     def blacklist_socket(self, protocol, socket):
-        self.connect()
-        try:
-            self.execute("INSERT into %s (socket) VALUES (\"%s\")" % (protocol.upper(), socket))
-            self.commit()
-        except sqlite3.IntegrityError:
-            pass
-        self.disconnect()
+        if protocol and socket:
+            self.connect()
+            try:
+                self.execute("INSERT into %s (socket) VALUES (\"%s\")" % (protocol.upper(), socket))
+                self.commit()
+            except sqlite3.IntegrityError:
+                pass
+            self.disconnect()

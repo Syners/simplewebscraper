@@ -1,12 +1,10 @@
-import logging
-
 from utilities.connection import Connect
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Scraper(Connect):
-    def __init__(self):
-        logger = logging.getLogger(__name__)
+    def __init__(self, log="simplescraper.log"):
+        from utilities.logger import get_logger
+        logger = get_logger(log, maxbytes=2 * 1024 * 1024 * 1024)
         Connect.__init__(self, logger)
 
 

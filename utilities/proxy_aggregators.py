@@ -1,8 +1,6 @@
 from db_manager import ProxyDB
-from utilities.enumerations import HTTPMethods
+from enumerations import HTTPMethods
 
-
-# todo - Add blacklist sqlite db to prevent bad proxies from repeating
 
 class ProxyPool(type):
     def __init__(cls, name, bases, d):
@@ -25,6 +23,8 @@ class Hidester(object):
                      'PANAMA,PERU,PHILIPPINES,POLAND,ROMANIA,RUSSIAN%20FEDERATION,SATELLITE%20PROVIDER,SERBIA,SINGAPORE,' \
                      'SOUTH%20AFRICA,SPAIN,SWEDEN,TAIWAN,THAILAND,TRINIDAD%20AND%20TOBAGO,SWITZERLAND,TURKEY,UKRAINE' \
                      ',UNITED%20KINGDOM,UNITED%20STATES,VENEZUELA&port=&type=3&anonymity=7&ping=7&gproxy=2'
+        import logging
+        logging.Logger.manager.emittedNoHandlerWarning = True
         self.scraper = Connect()
 
     def get_proxy_json(self):

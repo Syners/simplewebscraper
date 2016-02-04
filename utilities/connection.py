@@ -8,7 +8,9 @@ import re
 import urllib
 import zlib
 
+import errno
 import requests  # pip install requests[security]
+import json
 
 from adapters import SSLAdapter
 from convert_response import ToJSON, ToXML
@@ -16,7 +18,7 @@ from cookies import CookieJar
 from db_manager import ProxyDB
 from proxy_aggregators import ProxyPool
 from settings import Defaults
-from utilities.enumerations import HTTPMethods
+from enumerations import HTTPMethods
 
 requests.packages.urllib3.disable_warnings()
 
@@ -127,6 +129,7 @@ class Connect(Proxy):
     def cookies(self, cookie_object):
         if isinstance(cookie_object, CookieJar):
             self.jar = cookie_object().jar
+            self.logger.info("%s cookies loaded." % cookie_object.__name__)
 
     @property
     def HTTP_mode(self):
@@ -172,7 +175,10 @@ class Connect(Proxy):
 
     @download_path.setter
     def download_path(self, path):
-        self.__download_path = path
+        if os.path.exists(path):
+            self.__download_path = path
+        else:
+            raise ValueError("Not a valid directory.")
 
     def fetch(self):
         if not self.url:
@@ -211,8 +217,21 @@ class AbstractConnection(object):
             data = StringIO.StringIO(content).read()
         else:
             data = content
-        with open(os.path.abspath(os.path.join(self.connection.download_path, filename)), 'wb+') as objFile:
+
+        domain = re.match(r"^.*://(.*)",self.connection.url).group(1).split('/')[0]
+
+        filename = "%s/%s" % (domain,filename)
+        if not os.path.exists(os.path.dirname(filename)):
+            try:
+                os.makedirs(os.path.dirname(filename))
+            except OSError as exc: # Guard against race condition
+                if exc.errno != errno.EEXIST:
+                    raise
+
+        path = os.path.abspath(os.path.join(self.connection.download_path, filename))
+        with open(path, 'wb+') as objFile:
             objFile.write(data)
+        self.connection.logger.info("Content parsed. File downloaded to \"%s\"." % path)
 
     def convert(self, response):
         content = None
@@ -228,12 +247,19 @@ class AbstractConnection(object):
             content_type = response.headers['content-type']
             if 'application/json' in content_type:
                 content = ToJSON(content)
+                if isinstance(content, json):
+                    self.connection.logger.info("Content parsed. JSON object returned.")
+                else:
+                    self.connection.logger.info("Content parsed. JSON conversion failed.  String returned.")
             elif 'text/xml' in content_type:
                 content = ToXML(content)
+                self.connection.logger.info("Content parsed. XML object returned.")
             elif 'image/' in content_type:
                 self.download_file(content_type, content)
+                content = None
             elif 'application/' in content_type:
                 self.download_file(content_type, content, zip=True)
+                content = None
 
         return content
 
@@ -253,12 +279,13 @@ class Get(AbstractConnection):
         url = self.connection.url
         url += self.format_parameters(self.connection.parameters)
         protocol = re.match("(\w+)://", url).group(1)
+        results = None
         while 1:
             proxies = self.connection.current_proxy(True)
             if len(proxies['http']) > 0 or len(proxies['https']) > 0:
-                self.connection.logger.info("Connecting to %s via Proxy - %s." % (url, proxies[protocol]))
+                self.connection.logger.info("GET: %s via Proxy - %s." % (url, proxies[protocol]))
             else:
-                self.connection.logger.info("Connecting to %s." % url)
+                self.connection.logger.info("GET: %s." % url)
             try:
                 results = self.convert(
                     self.connection.requestSession.get(url, cookies=self.connection.jar,
@@ -266,11 +293,12 @@ class Get(AbstractConnection):
                                                        proxies=proxies,
                                                        verify=False, timeout=Defaults.connection_timeout_length,
                                                        stream=True))
+                self.connection.logger.info("GET: Successful.")
                 break
             except (
                     requests.exceptions.ConnectionError, requests.exceptions.ReadTimeout,
                     requests.exceptions.TooManyRedirects, requests.exceptions.SSLError):
-                self.connection.logger.info("Connection failed.")
+                self.connection.logger.info("GET: Failed.")
                 ProxyDB().blacklist_socket(protocol, proxies[protocol])
                 self.connection.expire_proxy(protocol)
 
@@ -287,25 +315,29 @@ class Post(AbstractConnection):
 
     def connect(self):
         url = self.connection.url
-
+        protocol = re.match("(\w+)://", url).group(1)
+        results = None
         while 1:
+            proxies = self.connection.current_proxy(True)
+            if len(proxies['http']) > 0 or len(proxies['https']) > 0:
+                self.connection.logger.info("POST: %s via Proxy - %s." % (url, proxies[protocol]))
+            else:
+                self.connection.logger.info("POST: %s." % url)
             try:
                 results = self.convert(self.connection.requestSession.post(url,
                                                                            data=self.format_parameters(
                                                                                self.connection.parameters),
                                                                            cookies=self.connection.jar,
                                                                            headers=self.connection.headers,
-                                                                           proxies=self.connection.current_proxy(True),
+                                                                           proxies=proxies,
                                                                            verify=False,
                                                                            timeout=Defaults.connection_timeout_length))
+                self.connection.logger.info("POST: Successful.")
                 break
             except (
                     requests.exceptions.ConnectionError, requests.exceptions.ReadTimeout,
                     requests.exceptions.TooManyRedirects, requests.exceptions.SSLError):
-                protocol = re.match("(\w+)://", url).group(1)
+                self.connection.logger.info("POST: failed.")
+                ProxyDB().blacklist_socket(protocol, proxies[protocol])
                 self.connection.expire_proxy(protocol)
         return results
-
-    # data = urllib.urlencode(formData)
-    # self.connection.requestSession.post(url, params=data, cookies=self.jar, headers=self.headers,
-    #                                     proxies=proxyDict, verify=False, timeout=(10.0, 10.0))

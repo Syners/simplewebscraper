@@ -8,7 +8,7 @@ import sqlite3
 import sys
 import time
 
-from utilities.enumerations import OperatingSystem
+from enumerations import OperatingSystem
 
 
 class CookieJar(type):
