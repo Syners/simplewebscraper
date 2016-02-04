@@ -1,1 +1,1 @@
-# webscraper
+Documentation is hosted at http://learnwebscraping.com/docs
