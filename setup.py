@@ -10,19 +10,20 @@ setup(
     name='simplewebscraper',
     version='1.0',
     license='lgpl',
-    packages=['simplewebscraper'],
+    packages=['simplewebscraper',"requests[security]","beautifulsoup4"],
     package_dir={'simplewebscraper': '.'},
     author='Alexander Ward',
     author_email='alexander.ward1@gmail.com',
-    description='Pure python library aimed to make web scraping easier',
+    maintainer_email = 'alexander.ward1@gmail.com',
+    description='Python library that makes web scraping very simple.',
     long_description=read('README.md'),
-    url='http://bitbucket.org/richardpenman/webscraping',
+    url='https://github.com/alexanderward/simplewebscraper',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
         'Programming Language :: Python',
-        'Topic :: Internet :: WWW/HTTP'
+        'Topic :: Internet :: WWW/HTTP',
         'Operating System :: OS Independent',
     ]
 )
