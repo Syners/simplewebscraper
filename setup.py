@@ -7,11 +7,11 @@ def read(filename):
 
 
 setup(
-    name='webscraper',
+    name='simplewebscraper',
     version='1.0',
     license='lgpl',
-    packages=['webscraper'],
-    package_dir={'webscraper': '.'},
+    packages=['simplewebscraper'],
+    package_dir={'simplewebscraper': '.'},
     author='Alexander Ward',
     author_email='alexander.ward1@gmail.com',
     description='Pure python library aimed to make web scraping easier',
