@@ -1,5 +1,6 @@
-from enumerations import HTTPMethods
 from db_manager import ProxyDB
+from utilities.enumerations import HTTPMethods
+
 
 # todo - Add blacklist sqlite db to prevent bad proxies from repeating
 

@@ -1,20 +1,22 @@
+import StringIO
+import abc
 import cookielib
+import gzip
+import logging
 import os
 import re
-import requests  # pip install requests[security]
-from adapters import SSLAdapter
-from enumerations import HTTPMethods
-import abc
 import urllib
-from convert_response import ToJSON, ToXML
-from settings import Defaults
-import gzip
-import StringIO
 import zlib
-import logging
-from proxy_aggregators import ProxyPool
+
+import requests  # pip install requests[security]
+
+from adapters import SSLAdapter
+from convert_response import ToJSON, ToXML
 from cookies import CookieJar
 from db_manager import ProxyDB
+from proxy_aggregators import ProxyPool
+from settings import Defaults
+from utilities.enumerations import HTTPMethods
 
 requests.packages.urllib3.disable_warnings()
 

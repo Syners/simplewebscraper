@@ -1,13 +1,14 @@
 import cookielib
 import glob
 import json
-import sys
+import os
 import platform
 import shutil
 import sqlite3
+import sys
 import time
-from enumerations import OperatingSystem
-import os
+
+from utilities.enumerations import OperatingSystem
 
 
 class CookieJar(type):

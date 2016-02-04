@@ -37,7 +37,7 @@ class DatabaseManager(object):
 
 
 class ProxyDB(DatabaseManager):
-    location = "proxy.sqlite"
+    location = "badproxies.sqlite"
     conn = None
 
     def __init__(self):
@@ -73,6 +73,3 @@ class ProxyDB(DatabaseManager):
         except sqlite3.IntegrityError:
             pass
         self.disconnect()
-
-
-print ProxyDB().blacklist_socket("https","https://212.119.246.138:8082")

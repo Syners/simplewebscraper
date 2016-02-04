@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c13e7bbc-c42c-4362-ad57-4b7d80dd35a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../simplewebscraper/exceptions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../simplewebscraper/simplescraper.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../simplewebscraper/enumerations.py" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/enumerations.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../simplewebscraper/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/__init__.py" afterPath="$PROJECT_DIR$/../simplewebscraper/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/utilities/connection.py" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/connection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/utilities/cookies.py" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/cookies.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py" afterPath="$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py" />
     </list>
     <ignored path="webscraper.iws" />
@@ -20,7 +25,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/webscraper$cookies__1_.coverage" NAME="cookies (1) Coverage Results" MODIFIED="1454535532555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utilities" />
-    <SUITE FILE_PATH="coverage/webscraper$test.coverage" NAME="test Coverage Results" MODIFIED="1454603809751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/webscraper$test.coverage" NAME="test Coverage Results" MODIFIED="1454604446360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/webscraper$connection.coverage" NAME="connection Coverage Results" MODIFIED="1454533554419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utilities" />
     <SUITE FILE_PATH="coverage/webscraper$proxy_aggregator.coverage" NAME="proxy_aggregator Coverage Results" MODIFIED="1454512191610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utilities" />
     <SUITE FILE_PATH="coverage/webscraper$httpmethods.coverage" NAME="httpmethods Coverage Results" MODIFIED="1454427354568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -51,54 +56,32 @@
         <entry file="file://$PROJECT_DIR$/../simplewebscraper/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simplescraper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../simplewebscraper/simplescraper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="enumerations.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../simplewebscraper/enumerations.py">
+        <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/enumerations.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connection.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="272" column="54" selection-start-line="272" selection-start-column="54" selection-end-line="272" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.4009434">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <element signature="e#3826#6131#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#3838#6143#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,28 +91,26 @@
         <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_manager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7193396">
-              <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1454603827704" expanded="true" signature="906:926" placeholder="CREATE TABLE..HTTPS..." />
-                <marker date="1454603827704" expanded="true" signature="906:959" placeholder="CREATE TABLE..HTTPS..." />
-                <marker date="1454603827704" expanded="true" signature="906:960" placeholder="CREATE TABLE..HTTPS..." />
-                <marker date="1454603827704" expanded="true" signature="985:1037" placeholder="CREATE TABLE..HTTP..." />
-                <marker date="1454603827704" expanded="true" signature="1376:1419" placeholder="select socke..HTTPS..." />
-                <marker date="1454603827704" expanded="true" signature="1874:1906" placeholder="INSERT into HTTP..." />
-                <marker date="1454603827704" expanded="true" signature="1874:1913" placeholder="INSERT into HTTP..." />
+                <marker date="1454603947272" expanded="true" signature="911:931" placeholder="CREATE TABLE..HTTPS..." />
+                <marker date="1454603947272" expanded="true" signature="911:964" placeholder="CREATE TABLE..HTTPS..." />
+                <marker date="1454603947272" expanded="true" signature="911:965" placeholder="CREATE TABLE..HTTPS..." />
+                <marker date="1454603947272" expanded="true" signature="990:1042" placeholder="CREATE TABLE..HTTP..." />
+                <marker date="1454603947272" expanded="true" signature="1381:1424" placeholder="select socke..HTTPS..." />
+                <marker date="1454603947272" expanded="true" signature="1879:1911" placeholder="INSERT into HTTP..." />
+                <marker date="1454603947272" expanded="true" signature="1879:1918" placeholder="INSERT into HTTP..." />
               </folding>
             </state>
           </provider>
@@ -139,11 +120,10 @@
         <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/cookies.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+              <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1454597245387" expanded="true" signature="1524:1609" placeholder="SELECT host_..cookies..." />
-                <marker date="1454597245387" expanded="true" signature="6581:6646" placeholder="SELECT host,..moz_cookies..." />
+                <marker date="1454604472601" expanded="true" signature="1535:1620" placeholder="SELECT host_..cookies..." />
+                <marker date="1454604472601" expanded="true" signature="6592:6657" placeholder="SELECT host,..moz_cookies..." />
               </folding>
             </state>
           </provider>
@@ -157,6 +137,16 @@
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,9 +187,11 @@
         <option value="$PROJECT_DIR$/simplescraper.py" />
         <option value="$PROJECT_DIR$/../simplescraper/__init__.py" />
         <option value="$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py" />
-        <option value="$PROJECT_DIR$/../test.py" />
         <option value="$PROJECT_DIR$/../simplewebscraper/utilities/connection.py" />
         <option value="$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py" />
+        <option value="$PROJECT_DIR$/../test.py" />
+        <option value="$PROJECT_DIR$/../simplewebscraper/simplescraper.py" />
+        <option value="$PROJECT_DIR$/../simplewebscraper/__init__.py" />
       </list>
     </option>
   </component>
@@ -310,6 +302,11 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\award\Desktop\simplewebscraper\utilities" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.test">
     <configuration default="false" name="simplescraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -683,7 +680,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454598682099</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added bad proxy tracking.">
+      <created>1454603841746</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1454603841746</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -729,7 +732,8 @@
     <MESSAGE value="Working proxies, need to add logging" />
     <MESSAGE value="added chrome cookie import" />
     <MESSAGE value="working cookie imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="working cookie imports" />
+    <MESSAGE value="added bad proxy tracking." />
+    <option name="LAST_COMMIT_MESSAGE" value="added bad proxy tracking." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,17 +742,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/simplescraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/enumerations.py">
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/enumerations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
@@ -761,8 +755,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#3826#6131#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#3838#6143#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -772,9 +766,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="202" column="26" selection-start-line="202" selection-start-column="26" selection-end-line="202" selection-end-column="26" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1454597245387" expanded="true" signature="1524:1609" placeholder="SELECT host_..cookies..." />
-            <marker date="1454597245387" expanded="true" signature="6581:6646" placeholder="SELECT host,..moz_cookies..." />
+            <marker date="1454604472601" expanded="true" signature="1535:1620" placeholder="SELECT host_..cookies..." />
+            <marker date="1454604472601" expanded="true" signature="6592:6657" placeholder="SELECT host,..moz_cookies..." />
           </folding>
         </state>
       </provider>
@@ -789,17 +782,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/simplescraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/enumerations.py">
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/enumerations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
@@ -812,8 +795,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#3826#6131#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#3838#6143#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -823,9 +806,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1454597245387" expanded="true" signature="1524:1609" placeholder="SELECT host_..cookies..." />
-            <marker date="1454597245387" expanded="true" signature="6581:6646" placeholder="SELECT host,..moz_cookies..." />
+            <marker date="1454604472601" expanded="true" signature="1535:1620" placeholder="SELECT host_..cookies..." />
+            <marker date="1454604472601" expanded="true" signature="6592:6657" placeholder="SELECT host,..moz_cookies..." />
           </folding>
         </state>
       </provider>
@@ -837,13 +819,6 @@
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -885,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -908,29 +873,43 @@
     <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/cookies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+          <caret line="64" column="51" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1454597245387" expanded="true" signature="1524:1609" placeholder="SELECT host_..cookies..." />
-            <marker date="1454597245387" expanded="true" signature="6581:6646" placeholder="SELECT host,..moz_cookies..." />
+            <marker date="1454604472601" expanded="true" signature="1535:1620" placeholder="SELECT host_..cookies..." />
+            <marker date="1454604472601" expanded="true" signature="6592:6657" placeholder="SELECT host,..moz_cookies..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/simplescraper.py">
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1454603947272" expanded="true" signature="911:931" placeholder="CREATE TABLE..HTTPS..." />
+            <marker date="1454603947272" expanded="true" signature="911:964" placeholder="CREATE TABLE..HTTPS..." />
+            <marker date="1454603947272" expanded="true" signature="911:965" placeholder="CREATE TABLE..HTTPS..." />
+            <marker date="1454603947272" expanded="true" signature="990:1042" placeholder="CREATE TABLE..HTTP..." />
+            <marker date="1454603947272" expanded="true" signature="1381:1424" placeholder="select socke..HTTPS..." />
+            <marker date="1454603947272" expanded="true" signature="1879:1911" placeholder="INSERT into HTTP..." />
+            <marker date="1454603947272" expanded="true" signature="1879:1918" placeholder="INSERT into HTTP..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/enumerations.py">
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/build/lib/simplewebscraper/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -938,45 +917,36 @@
     <entry file="file://$PROJECT_DIR$/../test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/proxy_aggregators.py">
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/enumerations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../simplewebscraper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="272" column="54" selection-start-line="272" selection-start-column="54" selection-end-line="272" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.4009434">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#3826#6131#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../simplewebscraper/utilities/db_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7193396">
-          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1454603827704" expanded="true" signature="906:926" placeholder="CREATE TABLE..HTTPS..." />
-            <marker date="1454603827704" expanded="true" signature="906:959" placeholder="CREATE TABLE..HTTPS..." />
-            <marker date="1454603827704" expanded="true" signature="906:960" placeholder="CREATE TABLE..HTTPS..." />
-            <marker date="1454603827704" expanded="true" signature="985:1037" placeholder="CREATE TABLE..HTTP..." />
-            <marker date="1454603827704" expanded="true" signature="1376:1419" placeholder="select socke..HTTPS..." />
-            <marker date="1454603827704" expanded="true" signature="1874:1906" placeholder="INSERT into HTTP..." />
-            <marker date="1454603827704" expanded="true" signature="1874:1913" placeholder="INSERT into HTTP..." />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#3838#6143#0" expanded="false" />
           </folding>
         </state>
       </provider>
