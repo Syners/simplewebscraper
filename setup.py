@@ -1,17 +1,19 @@
-import os
-from distutils.core import setup
+from setuptools import setup
 
 
 def read(filename):
-    return open(os.path.join(os.path.dirname(__file__), filename)).read()
+    with open(filename) as f:
+        return f.read()
 
 
 setup(
     name='simplewebscraper',
-    version='1.03b',
+    version='1.043',
     license='lgpl',
     packages=['simplewebscraper'],
-    package_dir={'simplewebscraper': '.'},
+    package_dir={'simplewebscraper': 'src'},
+    install_requires = ["requests[security]"],
+    package_data={'simplewebscraper': ['README.rst']},
     author='Alexander Ward',
     author_email='alexander.ward1@gmail.com',
     maintainer_email = 'alexander.ward1@gmail.com',
