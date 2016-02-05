@@ -10,7 +10,7 @@ setup(
     name='simplewebscraper',
     version='1.0',
     license='lgpl',
-    packages=['simplewebscraper',"requests[security]","beautifulsoup4"],
+    packages=['simplewebscraper'],
     package_dir={'simplewebscraper': '.'},
     author='Alexander Ward',
     author_email='alexander.ward1@gmail.com',
