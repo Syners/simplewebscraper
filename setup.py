@@ -8,7 +8,7 @@ def read(filename):
 
 setup(
     name='simplewebscraper',
-    version='1.0',
+    version='1.03b',
     license='lgpl',
     packages=['simplewebscraper'],
     package_dir={'simplewebscraper': '.'},
@@ -16,7 +16,7 @@ setup(
     author_email='alexander.ward1@gmail.com',
     maintainer_email = 'alexander.ward1@gmail.com',
     description='Python library that makes web scraping very simple.',
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     url='https://github.com/alexanderward/simplewebscraper',
     classifiers=[
         'Environment :: Web Environment',

@@ -1,4 +1,4 @@
-from simplewebscraper import Browser, ProxyPool, HTTPMethod, Scraper
+from simplewebscraper import Browser, HTTPMethod, Scraper
 
 if __name__ == "__main__":
     my_scraper = Scraper()
