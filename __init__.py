@@ -1,3 +1,7 @@
+"""
+This is the simplewebscraper package.
+"""
+
 from connection import Connect
 
 
