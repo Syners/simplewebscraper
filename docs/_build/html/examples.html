@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; simplewebscraper 1.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="simplewebscraper 1.3 documentation" href="index.html"/>
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> simplewebscraper
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-request">GET request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-request-with-parameters">GET request with parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-request">POST request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proxy-use">Proxy use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-request-headers">Modify request headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parsing-the-results">Parsing the results</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">simplewebscraper</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Examples</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/examples.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-request">
+<h2>GET request<a class="headerlink" href="#get-request" title="Permalink to this headline">¶</a></h2>
+<p>A generic GET request.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://learnwebscraping.com&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-request-with-parameters">
+<h2>GET request with parameters<a class="headerlink" href="#get-request-with-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Parameters will be automatically URL encoded and appended the end of the url provided.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;param1&#39;</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">,</span>
+                         <span class="s">&quot;param2&quot;</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">}</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://learnwebscraping.com&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-request">
+<h2>POST request<a class="headerlink" href="#post-request" title="Permalink to this headline">¶</a></h2>
+<p>A generic POST request.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;param1&#39;</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">,</span>
+                         <span class="s">&quot;param2&quot;</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">}</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://learnwebscraping.com&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="proxy-use">
+<h2>Proxy use<a class="headerlink" href="#proxy-use" title="Permalink to this headline">¶</a></h2>
+<p>Proxies can be allocated 1 of 2 ways.  The first way is to use the ProxyPool class which has built in proxy aggregators.  By
+indicating that you want to use the first example, it will retrieve and populate your Proxy pool with up to date proxies
+.  If however, you want to provide your own you can use example 2 where you provide a dictionary in that format.  Both
+methods allow you to set the number of times a single proxy can be used.  By default its approximately 100,000, but you
+can modify this number by following the sample code.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span><span class="p">,</span> <span class="n">ProxyPool</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">use_per_proxy_count</span> <span class="o">=</span> <span class="mi">5</span> <span class="c">#Number of times the proxy will be used before rotating</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">proxy_pool</span> <span class="o">=</span> <span class="n">ProxyPool</span><span class="o">.</span><span class="n">Hidester</span> <span class="c">#Retrieves proxies and generates a proxy pool for you.</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://learnwebscraping.com&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">use_per_proxy_count</span> <span class="o">=</span> <span class="mi">5</span> <span class="c">#Number of times the proxy will be used before rotating</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">proxy_pool</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="s">&quot;https&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;https://1.2.3.4:1234&quot;</span><span class="p">,],</span>
+                            <span class="s">&quot;http&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;http://1.2.3.4:1234&quot;</span><span class="p">,]</span>
+                        <span class="p">}</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://learnwebscraping.com&quot;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modify-request-headers">
+<h2>Modify request headers<a class="headerlink" href="#modify-request-headers" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes modifying the request headers is very important to successfully scrape. By default your request headers will
+look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;Connection&#39;</span><span class="p">:</span> <span class="s">&#39;keep-alive&#39;</span><span class="p">,</span> <span class="s">&#39;Content-type&#39;</span><span class="p">:</span> <span class="s">&#39;application/x-www-form-urlencoded; charset=UTF-8&#39;</span><span class="p">,</span> <span class="s">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s">&#39;gzip, deflate&#39;</span><span class="p">,</span> <span class="s">&#39;Accept&#39;</span><span class="p">:</span> <span class="s">&#39;*/*&#39;</span><span class="p">,</span> <span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>To modify your request headers follow this example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://learnwebscraping.com&quot;</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;User-Agent&quot;</span><span class="p">:</span><span class="s">&quot;Some User agent string&quot;</span><span class="p">}</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Keep in mind that when changing the headers, it merges and overwrites fields.  It will not delete any entries in your headers if you only provide a select number of fields.</p>
+</div>
+<div class="section" id="parsing-the-results">
+<h2>Parsing the results<a class="headerlink" href="#parsing-the-results" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the data you scraped, the data returned will be a different data type.  The type is dependent on the content-type in the HTTP response header.</p>
+<p>The data is handled the following ways based on the content-type:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Content Type</th>
+<th class="head">Returned</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>application/*</td>
+<td>None</td>
+<td>This will be downloaded to &lt;workingdirectory&gt;/&lt;domain&gt;/filename</td>
+</tr>
+<tr class="row-odd"><td>image/*</td>
+<td>None</td>
+<td>This will be downloaded to &lt;workingdirectory&gt;/&lt;domain&gt;/filename</td>
+</tr>
+<tr class="row-even"><td>video/*</td>
+<td>None</td>
+<td>This will be downloaded to &lt;workingdirectory&gt;/&lt;domain&gt;/filename</td>
+</tr>
+<tr class="row-odd"><td>text/*</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Exceptions:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Content Type</th>
+<th class="head">Returned</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>text/xml</td>
+<td>XML Object</td>
+</tr>
+<tr class="row-odd"><td>application/json</td>
+<td>JSON Object</td>
+</tr>
+</tbody>
+</table>
+<p>To inspect the content-type of the response header follow this example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">simplewebscraper</span> <span class="kn">import</span> <span class="n">HTTPMethod</span><span class="p">,</span> <span class="n">Scraper</span>
+<span class="n">my_scraper</span> <span class="o">=</span> <span class="n">Scraper</span><span class="p">()</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">HTTP_mode</span> <span class="o">=</span> <span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://learnwebscraping.com&quot;</span>
+<span class="n">my_scraper</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="n">my_scraper</span><span class="o">.</span><span class="n">response_headers</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Alexander Ward.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
